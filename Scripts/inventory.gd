@@ -3,7 +3,7 @@ extends Node2D
 var save_path = "C:/Users/fjror/Desktop/rpgGameSave/sample1.json"
 
 var health = 5
-var gold = 110
+var gold = 30
 var mobKills = 0
 var roomKills = 0
 var floorNum = 1
@@ -100,6 +100,10 @@ func save():
 	file.store_var(daveInMainLevel)
 	file.store_var(daveShopOpen)
 	file.store_var(playerSpeed)
+	file.store_var(bootsON)
+	file.store_var(fairyBottle)
+	file.store_var(shopItems)
+	file.store_var(startFloor)
 	
 func load_data():
 	if FileAccess.file_exists(save_path):

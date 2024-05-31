@@ -101,17 +101,6 @@ texture = ExtResource("3_5whim")
 hframes = 5
 vframes = 7
 
-[node name="Button2" type="Button" parent="CanvasLayer"]
-z_index = 4096
-z_as_relative = false
-y_sort_enabled = true
-offset_left = 798.0
-offset_top = 253.0
-offset_right = 990.0
-offset_bottom = 380.0
-theme_override_font_sizes/font_size = 60
-text = "Load"
-
 [node name="Button" type="Button" parent="CanvasLayer"]
 offset_left = 777.0
 offset_top = 429.0
@@ -122,5 +111,4 @@ text = "SAVE"
 
 [connection signal="mouse_entered" from="CanvasLayer/Boot/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Boot/Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
