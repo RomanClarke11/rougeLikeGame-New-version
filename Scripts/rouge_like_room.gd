@@ -48,6 +48,7 @@ func _ready():
 		%Camera2D/Heart2.play("1")
 	elif PlayerHealth.health == 0:
 		%Camera2D/Heart2.play("0")
+	%map.play("0")
 	spawnRandRoom()
 
 	
@@ -732,45 +733,55 @@ func _process(delta):
 func _on_five_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect.position
+		%Camera2D/map.play("5")
+		
 
 
 func _on_six_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect2.position
+		%Camera2D/map.play("6")
 
 
 func _on_four_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect3.position
+		%Camera2D/map.play("4")
 
 func _on_seven_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect4.position
+		%Camera2D/map.play("7")
 
 
 func _on_eight_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect5.position
+		%Camera2D/map.play("8")
 
 
 func _on_ninr_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect6.position
+		%Camera2D/map.play("9")
 
 
 func _on_one_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect7.position
+		%Camera2D/map.play("1")
 
 
 func _on_two_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect8.position
+		%Camera2D/map.play("2")
 
 
 func _on_three_body_entered(body):
 	if body.has_method("pickUpGold"):
 		%Camera2D.position = %ColorRect9.position
+		%Camera2D/map.play("3")
 
 
 

@@ -1,9 +1,6 @@
 extends Node2D
-
-var save_path = "C:/Users/fjror/Desktop/rpgGameSave/sample1.json"
-
 var health = 5
-var gold = 30
+var gold = 0 
 var mobKills = 0
 var roomKills = 0
 var floorNum = 1
@@ -15,7 +12,7 @@ var pressedYes = false
 var fairyBottle = false
 var person1Free = false
 var person2Free = false
-var daveInMainLevel = true
+var daveInMainLevel = false
 var giveDaveGold = false
 var daveShopOpen = false
 var highestFloor = 1
@@ -25,6 +22,40 @@ var inventoryOpen = false
 var playerHit = false 
 var savePressed = false
 var loadGame = false
+var json = JSON.new()
+var path = "user://data"
+var data = {}
+
+
+
+
+func save(content):
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(content))
+	file.close()
+	file = null
+
+func create_new_save():
+	var file = FileAccess.open("res://Deftult_data.json", FileAccess.READ)
+	var content = JSON.parse_string(file.get_as_text())
+	data = content
+	save(content)
+
+func load_game():
+	if FileAccess.file_exists(path):
+		var file = FileAccess.open(path, FileAccess.READ)
+		var content = JSON.parse_string(file.get_as_text())
+		gold = content.gold
+		return content
+	else:
+		create_new_save()
+
+func _on_button_pressed():
+	if inDungeon == false:
+		var content = {"gold":gold, "health":health, "playerSpeed":playerSpeed, "bootsON":bootsON, "highestFloor":highestFloor, "startFloor":startFloor, "daveInMainLevel":daveInMainLevel }
+		print(content)
+		save(content)
+
 
 
 func _physics_process(_delta):
@@ -69,7 +100,8 @@ func _process(_delta):
 		%CanvasLayer/Boot.visible = true 
 		
 	if loadGame == true:
-		load_data()
+		pass
+		#load_data()
 
 func pickUpGold():
 	gold += 1
@@ -86,42 +118,7 @@ func _on_area_2d_mouse_exited():
 		
 		
 
-		
-func save():
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	if file == null:
-		var error_num = FileAccess.get_open_error()
-		push_error("Couldn't open with error #%d" % error_num)
-		return
-	file.store_var(gold)
-	file.store_var(health)
-	file.store_var(highestFloor)
-	file.store_var(giveDaveGold)
-	file.store_var(daveInMainLevel)
-	file.store_var(daveShopOpen)
-	file.store_var(playerSpeed)
-	file.store_var(bootsON)
-	file.store_var(fairyBottle)
-	file.store_var(shopItems)
-	file.store_var(startFloor)
+
+
+
 	
-func load_data():
-	if FileAccess.file_exists(save_path):
-		var file = FileAccess.open(save_path, FileAccess.READ)
-		gold = file.get_var(gold)
-		health = file.get_var(health)
-		highestFloor = file.get_var(highestFloor)
-		giveDaveGold = file.get_var(giveDaveGold)
-		daveInMainLevel = file.get_var(daveInMainLevel)
-		daveShopOpen = file.get_var(daveShopOpen)
-		playerSpeed = file.get_var(playerSpeed)
-	else:
-		print_debug("no save")
-
-func _on_button_pressed():
-	if inDungeon == false:
-		save()
-
-
-
-

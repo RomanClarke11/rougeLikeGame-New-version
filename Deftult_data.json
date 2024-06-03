@@ -1,0 +1,12 @@
+{
+	"gold":0,
+	"health":5,
+	"highestfloor":1,
+	"giveDaveGold":false,
+	"daveInMainLevel":false,
+	"daveShopOpen":false,
+	"playerSpeed":450,
+	"bootsON":false,
+	"fairyBottle":false,
+	"startFloor":1
+}

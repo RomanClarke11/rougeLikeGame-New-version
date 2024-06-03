@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qf3q0cmcnhnd"]
+[gd_scene load_steps=10 format=3 uid="uid://qf3q0cmcnhnd"]
 
 [ext_resource type="Texture2D" uid="uid://sq60rhv80mak" path="res://Sprites/GAME BACKROUND LEVEL 1.png" id="1_766xd"]
 [ext_resource type="Script" path="res://Scripts/main_level.gd" id="1_cpd5b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6p48e67nnwyf" path="res://Scenes/character_body_2d.tscn" id="3_6171k"]
 [ext_resource type="PackedScene" uid="uid://d0xhkwa3hk1cm" path="res://Scenes/portal.tscn" id="5_vgeco"]
 [ext_resource type="PackedScene" uid="uid://dhcklm1d7gcng" path="res://Scenes/dave.tscn" id="6_pndtt"]
+[ext_resource type="PackedScene" uid="uid://c4t1nvn3angie" path="res://Scenes/gold.tscn" id="7_o2cvr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02ipm"]
 
@@ -123,6 +124,9 @@ position = Vector2(176, 136)
 [node name="Dave" parent="." instance=ExtResource("6_pndtt")]
 unique_name_in_owner = true
 position = Vector2(129, -119)
+
+[node name="gold" parent="." instance=ExtResource("7_o2cvr")]
+position = Vector2(357, 193)
 
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_body_entered"]
 [connection signal="body_exited" from="Portal" to="." method="_on_portal_body_exited"]

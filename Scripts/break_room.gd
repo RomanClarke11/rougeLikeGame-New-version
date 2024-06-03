@@ -20,7 +20,7 @@ func _ready():
 	%dave.visible = false
 	%cell.play("empty")
 	%AnimatedSprite2D.scale.x = -2.26
-	NPCSpawn = randi_range(32,32)
+	NPCSpawn = randi_range(1,32)
 	if NPCSpawn == 32:
 		Person = randi_range(1,1)
 		if Person == 1:
