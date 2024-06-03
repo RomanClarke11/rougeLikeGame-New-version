@@ -46,6 +46,7 @@ func load_game():
 		var file = FileAccess.open(path, FileAccess.READ)
 		var content = JSON.parse_string(file.get_as_text())
 		gold = content.gold
+		health = content.health
 		return content
 	else:
 		create_new_save()
