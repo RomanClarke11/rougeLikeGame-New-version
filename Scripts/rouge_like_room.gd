@@ -31,7 +31,12 @@ const ROOM15 = preload("res://Scenes/Rooms/room_15.tscn")
 @onready var inventory = get_node("/root/Inventory")
 const BREAKROOM = "res://Scenes/break_room.tscn"
 const stairs = preload("res://Scenes/stair.tscn")
+var musicPlaying = true
 
+func playMusic():
+	if musicPlaying == false:
+		%music.play()
+		musicPlaying = true
 
 
 
@@ -785,3 +790,7 @@ func _on_three_body_entered(body):
 
 
 
+
+
+func _on_audio_stream_player_2d_finished():
+	musicPlaying = false

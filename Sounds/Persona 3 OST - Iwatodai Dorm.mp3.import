@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bm1l3k3xllomb"
+path="res://.godot/imported/Persona 3 OST - Iwatodai Dorm.mp3-481a1705038fd00506056b547b87a6c9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Persona 3 OST - Iwatodai Dorm.mp3"
+dest_files=["res://.godot/imported/Persona 3 OST - Iwatodai Dorm.mp3-481a1705038fd00506056b547b87a6c9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

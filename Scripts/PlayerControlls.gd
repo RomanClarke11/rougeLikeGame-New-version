@@ -12,7 +12,6 @@ const dead = "res://Scenes/death_level.tscn"
 @onready var PlayerHealth = get_node("/root/Inventory")
 
 
-
 func _physics_process(_delta):
 	
 
@@ -111,10 +110,10 @@ func attack():
 	%AnimatedSprite2D.add_child(Attack)
 	
 	
-func _ready():
-	pass
+	
 func swingSword():
 	if Input.is_key_pressed(KEY_SPACE):
+		%grunt.play()
 		if facing_up == true:
 			walking = false 
 			attack()

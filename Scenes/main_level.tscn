@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6p48e67nnwyf" path="res://Scenes/character_body_2d.tscn" id="3_6171k"]
 [ext_resource type="PackedScene" uid="uid://d0xhkwa3hk1cm" path="res://Scenes/portal.tscn" id="5_vgeco"]
 [ext_resource type="PackedScene" uid="uid://dhcklm1d7gcng" path="res://Scenes/dave.tscn" id="6_pndtt"]
-[ext_resource type="PackedScene" uid="uid://c4t1nvn3angie" path="res://Scenes/gold.tscn" id="7_o2cvr"]
+[ext_resource type="AudioStream" uid="uid://i8hxv4epindx" path="res://Sounds/Persona 4 - Heartbeat, Heartbreak.mp3" id="7_d857s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02ipm"]
 
@@ -74,7 +74,7 @@ rotation = 1.57079
 scale = Vector2(0.0634409, -134.493)
 
 [node name="Wall9" parent="Wall" instance=ExtResource("2_awooy")]
-position = Vector2(-1116.74, -14.6864)
+position = Vector2(-1120.28, -14.0564)
 scale = Vector2(16.7556, 0.0942666)
 
 [node name="Wall10" parent="Wall" instance=ExtResource("2_awooy")]
@@ -86,7 +86,7 @@ position = Vector2(-1923.02, -10.9262)
 scale = Vector2(13.231, 0.3388)
 
 [node name="Wall12" parent="Wall" instance=ExtResource("2_awooy")]
-position = Vector2(-460.391, -11.5759)
+position = Vector2(-501.708, -11.6349)
 scale = Vector2(13.231, 0.3388)
 
 [node name="Wall14" parent="Wall" instance=ExtResource("2_awooy")]
@@ -125,11 +125,14 @@ position = Vector2(176, 136)
 unique_name_in_owner = true
 position = Vector2(129, -119)
 
-[node name="gold" parent="." instance=ExtResource("7_o2cvr")]
-position = Vector2(357, 193)
+[node name="music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_d857s")
+autoplay = true
 
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_body_entered"]
 [connection signal="body_exited" from="Portal" to="." method="_on_portal_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Portal2" to="." method="_on_portal_2_body_entered"]
 [connection signal="body_exited" from="Portal2" to="." method="_on_portal_2_body_exited"]
+[connection signal="finished" from="music" to="." method="_on_music_finished"]

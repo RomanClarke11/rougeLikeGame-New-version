@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://coyair7hedhcq"
+path="res://.godot/imported/Hyrule Castle Interior (The Legend of Zelda_ Breath of the Wild OST).mp3-1d6d873e55ecbeb41f2fc9dcec341da7.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Hyrule Castle Interior (The Legend of Zelda_ Breath of the Wild OST).mp3"
+dest_files=["res://.godot/imported/Hyrule Castle Interior (The Legend of Zelda_ Breath of the Wild OST).mp3-1d6d873e55ecbeb41f2fc9dcec341da7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

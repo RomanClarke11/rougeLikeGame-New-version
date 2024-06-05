@@ -1,6 +1,6 @@
 [gd_scene load_steps=83 format=3 uid="uid://dhcklm1d7gcng"]
 
-[ext_resource type="Script" path="res://Scenes/dave.gd" id="1_55fy8"]
+[ext_resource type="Script" path="res://Scripts/dave.gd" id="1_55fy8"]
 [ext_resource type="Texture2D" uid="uid://dcfygc0qkvws" path="res://Sprites/davethedanishnugget-ezgif.com-gif-to-sprite-converter.png" id="2_0yuyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eebk0"]

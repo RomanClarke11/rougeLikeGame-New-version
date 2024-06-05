@@ -47,6 +47,11 @@ func load_game():
 		var content = JSON.parse_string(file.get_as_text())
 		gold = content.gold
 		health = content.health
+		playerSpeed = content.playerSpeed
+		bootsON = content.bootsON
+		highestFloor = content.highestFloor
+		startFloor = content.startFloor
+		daveInMainLevel = content.daveInMainLevel
 		return content
 	else:
 		create_new_save()
@@ -54,7 +59,6 @@ func load_game():
 func _on_button_pressed():
 	if inDungeon == false:
 		var content = {"gold":gold, "health":health, "playerSpeed":playerSpeed, "bootsON":bootsON, "highestFloor":highestFloor, "startFloor":startFloor, "daveInMainLevel":daveInMainLevel }
-		print(content)
 		save(content)
 
 

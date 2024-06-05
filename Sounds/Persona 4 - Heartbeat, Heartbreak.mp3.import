@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://i8hxv4epindx"
+path="res://.godot/imported/Persona 4 - Heartbeat, Heartbreak.mp3-e3fef3caff083a33c4d1151ecff50aa8.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Persona 4 - Heartbeat, Heartbreak.mp3"
+dest_files=["res://.godot/imported/Persona 4 - Heartbeat, Heartbreak.mp3-e3fef3caff083a33c4d1151ecff50aa8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

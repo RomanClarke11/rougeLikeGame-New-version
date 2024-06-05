@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://djfp1ekebmvum"]
+[gd_scene load_steps=7 format=3 uid="uid://djfp1ekebmvum"]
 
 [ext_resource type="Script" path="res://Scripts/shop.gd" id="1_32qne"]
 [ext_resource type="Texture2D" uid="uid://dynokatlcv3p" path="res://Sprites/shop.png" id="1_fjxlo"]
 [ext_resource type="Texture2D" uid="uid://04onofnof11e" path="res://Sprites/Boot.png" id="3_kuvpk"]
 [ext_resource type="Texture2D" uid="uid://clx2ykd3uemj2" path="res://Sprites/fairyBottle.png" id="4_wwu50"]
+[ext_resource type="AudioStream" uid="uid://ccagx1bcnt15m" path="res://Sounds/Undertale OST_ 023 - Shop.mp3" id="5_av0uf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dylas"]
 size = Vector2(37.8567, 17.6918)
@@ -92,9 +93,14 @@ offset_top = -104.0
 offset_right = 82.0
 offset_bottom = 106.0
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_av0uf")
+autoplay = true
+
 [connection signal="pressed" from="buy/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="buy/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Boot/Button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="Boot/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Boot/Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="pressed" from="FairyBottle/fairyButton" to="." method="_on_fairy_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

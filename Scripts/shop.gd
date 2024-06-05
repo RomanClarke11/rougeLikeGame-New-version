@@ -6,7 +6,14 @@ var pressed = false
 var price 
 var baught = false
 var fairyPressed = false
+var musicPlaying = true
 
+func playMusic():
+	if musicPlaying == false:
+		%music.play()
+		musicPlaying = true
+		
+		
 func _process(_delta):
 	if Input.is_key_pressed(KEY_ESCAPE):
 			get_tree().change_scene_to_file(mainLevel)
@@ -73,3 +80,7 @@ func _on_yes_pressed():
 
 func _on_fairy_button_pressed():
 	fairyPressed = true
+
+
+func _on_audio_stream_player_2d_finished():
+	musicPlaying = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cijjmmmob0261"]
+[gd_scene load_steps=46 format=3 uid="uid://cijjmmmob0261"]
 
 [ext_resource type="Script" path="res://Scripts/rouge_like_room.gd" id="1_sfbnj"]
 [ext_resource type="Texture2D" uid="uid://v5d881hphj60" path="res://Sprites/Heartspritesheet.png" id="3_dkk5h"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://tfb1n8dl6ojr" path="res://Scenes/wall.tscn" id="5_1bxyu"]
 [ext_resource type="PackedScene" uid="uid://c6p48e67nnwyf" path="res://Scenes/character_body_2d.tscn" id="5_mo6kg"]
 [ext_resource type="Texture2D" uid="uid://r6ry1d20n150" path="res://Sprites/map.png" id="5_uwlpg"]
+[ext_resource type="AudioStream" uid="uid://coyair7hedhcq" path="res://Sounds/Hyrule Castle Interior (The Legend of Zelda_ Breath of the Wild OST).mp3" id="9_4k6gk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7y1r"]
 atlas = ExtResource("3_dkk5h")
@@ -1554,6 +1555,10 @@ position = Vector2(2381, -304)
 rotation = 3.14159
 scale = Vector2(0.877574, -7.74632)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_4k6gk")
+autoplay = true
+
 [connection signal="body_entered" from="ColorRect/five" to="." method="_on_five_body_entered"]
 [connection signal="body_entered" from="ColorRect2/six" to="." method="_on_six_body_entered"]
 [connection signal="body_entered" from="ColorRect3/four" to="." method="_on_four_body_entered"]
@@ -1563,3 +1568,4 @@ scale = Vector2(0.877574, -7.74632)
 [connection signal="body_entered" from="ColorRect7/one" to="." method="_on_one_body_entered"]
 [connection signal="body_entered" from="ColorRect8/two" to="." method="_on_two_body_entered"]
 [connection signal="body_entered" from="ColorRect9/three" to="." method="_on_three_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

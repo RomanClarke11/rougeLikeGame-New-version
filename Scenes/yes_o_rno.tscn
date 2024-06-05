@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwckd7eruakca"]
 
-[ext_resource type="Script" path="res://Label.gd" id="1_jw160"]
+[ext_resource type="Script" path="res://Scripts/Label.gd" id="1_jw160"]
 [ext_resource type="Texture2D" uid="uid://e31it5355xiy" path="res://Sprites/TextBox.png" id="2_a2flw"]
 
 [node name="yesORno" type="Label"]

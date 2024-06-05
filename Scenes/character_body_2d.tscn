@@ -1,7 +1,8 @@
-[gd_scene load_steps=59 format=3 uid="uid://c6p48e67nnwyf"]
+[gd_scene load_steps=60 format=3 uid="uid://c6p48e67nnwyf"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerControlls.gd" id="1_gbjol"]
 [ext_resource type="Texture2D" uid="uid://dwxblk33c08lp" path="res://Sprites/player.png" id="2_ykt0p"]
+[ext_resource type="AudioStream" uid="uid://cc2mbssq5teuv" path="res://Sounds/grunt.mp3" id="3_o6iro"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_816cu"]
 atlas = ExtResource("2_ykt0p")
@@ -453,8 +454,14 @@ script = ExtResource("1_gbjol")
 unique_name_in_owner = true
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_dm0eh")
-animation = &"attackBack"
+animation = &"die"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.158813, 8.01671)
 shape = SubResource("RectangleShape2D_b812g")
+
+[node name="grunt" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_o6iro")

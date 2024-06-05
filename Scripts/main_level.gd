@@ -3,10 +3,13 @@ extends Node2D
 const rougelike = "res://Scenes/rouge_like_room.tscn"
 const loadShop = "res://Scenes/shop.tscn"
 const BREAKROOM = "res://Scenes/break_room.tscn"
-
+var musicPlaying = true
 func shop():
 	pass
-
+func playMusic():
+	if musicPlaying == false:
+		%music.play()
+		musicPlaying = true
 
 func _ready():
 	inventory.inDungeon = false 
@@ -45,3 +48,7 @@ func _on_portal_2_body_entered(_body):
 
 
 
+
+
+func _on_music_finished():
+	musicPlaying = false
